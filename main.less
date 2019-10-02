@@ -1,0 +1,92 @@
+@accent-color: #D8E8EC;
+@font-fam: 'Oxygen', sans-serif;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: @font-fam;
+}
+
+#navigation-bar {
+    width: 100vw;
+    margin: 0;
+    padding: 2vh;
+    background-color: @accent-color;
+    box-sizing: border-box;
+    list-style-type: none;
+    a {
+        display: block;
+        color: #000000;
+        text-decoration: none;
+    }
+    .title {
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+#product-body-container {
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    #product-selector {
+        width: 45vw;
+        display: flex;
+        justify-content: space-around;
+        .image-content {
+            padding: 20px;
+            border-radius: 15px;
+            border: 3px solid transparent;
+        }
+        .image-content.selected {
+            border: 3px solid @accent-color;
+        }
+        img {
+            width: 20vw;
+        }
+    }
+    #product-description-container {
+        width: 45vw;
+        #chosen-product {
+            width: 40vw;
+        }
+    }
+}
+
+#landing-body-container {
+    height: 90vh;
+    width: 100vw;
+    position: relative;
+    #landing-body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        #logo {
+            font-size: 54px;
+            padding: 15px 0;
+            text-decoration: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            color: #000000;
+        }
+        button {
+            border: none;
+            padding: 15px;
+            border-radius: 15px;
+            background-color: @accent-color;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            a {
+                text-decoration: none;
+                font-family: @font-fam;
+                font-size: 18px;
+                color: #000000;
+            }
+        }
+    }
+}
