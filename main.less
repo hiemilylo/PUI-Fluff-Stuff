@@ -1,10 +1,27 @@
 @accent-color: #D8E8EC;
+@dark-accent-color: #96C8D3;
 @font-fam: 'Oxygen', sans-serif;
 
 body {
     margin: 0;
     padding: 0;
     font-family: @font-fam;
+}
+
+button {
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: @accent-color;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    a {
+        text-decoration: none;
+        font-family: @font-fam;
+        font-size: 18px;
+        color: #000000;
+    }
 }
 
 #navigation-bar {
@@ -25,6 +42,42 @@ body {
     }
 }
 
+#product-descp-container {
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-top: 10vh;
+    #product-preview-container {
+        width: 60vw;
+        display: flex;
+        flex-direction: row;
+        // background-color: @accent-color;
+        #product-preview-image-container {
+            width: 85%;
+            #product-preview-large {
+                width: 100%;
+            }
+        }
+        #product-preview-list {
+            margin: 0px 15px 15px 15px;
+            width: 15%;
+            img {
+                width: 100%;
+                cursor: pointer;
+                border: 3px solid transparent;
+            }
+            .chosen-preview {
+                border-color: @dark-accent-color;
+            }
+        }
+    }
+    #prod-description-container {
+        width: 30vw;
+    }
+}
+
 #product-body-container {
     height: 90vh;
     display: flex;
@@ -33,8 +86,10 @@ body {
     justify-content: space-around;
     #product-selector {
         width: 45vw;
+        margin: auto;
         display: flex;
         justify-content: space-around;
+        cursor: pointer;
         .image-content {
             padding: 20px;
             border-radius: 15px;
@@ -49,6 +104,7 @@ body {
     }
     #product-description-container {
         width: 45vw;
+        margin: auto;
         #chosen-product {
             width: 40vw;
         }
@@ -72,21 +128,6 @@ body {
             -webkit-appearance: none;
             -moz-appearance: none;
             color: #000000;
-        }
-        button {
-            border: none;
-            padding: 15px;
-            border-radius: 15px;
-            background-color: @accent-color;
-            cursor: pointer;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            a {
-                text-decoration: none;
-                font-family: @font-fam;
-                font-size: 18px;
-                color: #000000;
-            }
         }
     }
 }
