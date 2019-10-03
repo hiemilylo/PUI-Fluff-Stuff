@@ -42,6 +42,41 @@ button {
     }
 }
 
+#more-info-container {
+    height: 50vh;
+    width: 80vw;
+    .tab {
+        overflow: hidden;
+        border: 3px solid transparent;
+        button {
+            font-family: @font-fam;
+            font-size: 24px;
+            float: left;
+            background-color: transparent;
+            border-bottom: 3px solid transparent;
+            border-radius: 0px;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #eee;
+        }
+        button.active {
+            border-bottom-color: @accent-color;
+        }
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: none;
+    }
+}
+
 #product-descp-container {
     height: 80vh;
     display: flex;
