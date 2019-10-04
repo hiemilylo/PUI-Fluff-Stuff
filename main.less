@@ -1,5 +1,6 @@
 @accent-color: #D8E8EC;
 @dark-accent-color: #96C8D3;
+@darkest-accent-color: #5493A0;
 @font-fam: 'Oxygen', sans-serif;
 
 body {
@@ -47,7 +48,7 @@ button {
     width: 80vw;
     .tab {
         overflow: hidden;
-        border: 3px solid transparent;
+        border-bottom: 1px solid #aaa;
         button {
             font-family: @font-fam;
             font-size: 24px;
@@ -58,23 +59,29 @@ button {
             outline: none;
             cursor: pointer;
             padding: 10px 15px;
-            margin: 10px;
+            margin: 0px 10px;
             transition: 0.3s;
         }
         button:hover {
             background-color: #eee;
+            // font-weight: bold;
         }
         button.active {
-            border-bottom-color: @accent-color;
+            border-bottom-color: @darkest-accent-color;
+            font-weight: bold;
         }
     }
 
-    /* Style the tab content */
     .tabcontent {
         display: none;
         padding: 6px 12px;
         border: none;
     }
+}
+
+.prod-header {
+    display: flex;
+    justify-content: space-between;
 }
 
 #product-descp-container {
@@ -113,6 +120,68 @@ button {
     }
 }
 
+.yarn-selector-container {
+    display: flex;
+    margin: 15px 0;
+    justify-content: space-between;
+    h3 {
+        margin: auto 0;
+    }
+    .yarn-select {
+        width: 60%;
+        position: relative;
+        font-family: @font-fam;
+        select {
+            display: none;
+        }
+        .select-selected {
+            background-color: #C4C4C4;
+        }
+        .select-selected:after {
+            position: absolute;
+            content: "";
+            top: 14px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-color: @dark-accent-color transparent transparent transparent;
+        }
+        .select-selected.select-arrow-active:after {
+            border-color: transparent transparent @dark-accent-color transparent;
+            top: 7px;
+        }
+
+        /* style the items (options), including the selected item: */
+        .select-items div,.select-selected {
+            color: #000000;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+            cursor: pointer;
+        }
+
+        /* Style items (options): */
+        .select-items {
+            position: absolute;
+            background-color: @accent-color;
+            // top: height();
+            left: 0;
+            right: 0;
+            z-index: 99;
+        }
+
+        /* Hide the items when the select box is closed: */
+        .select-hide {
+            display: none;
+        }
+
+        .select-items div:hover, .same-as-selected {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+}
 #product-body-container {
     height: 90vh;
     display: flex;
