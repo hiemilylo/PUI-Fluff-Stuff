@@ -1,4 +1,5 @@
 @accent-color: #D8E8EC;
+@light-background: #E9E9E9;
 @dark-accent-color: #96C8D3;
 @darkest-accent-color: #5493A0;
 @font-fam: 'Oxygen', sans-serif;
@@ -135,7 +136,7 @@ button {
             display: none;
         }
         .select-selected {
-            background-color: #C4C4C4;
+            background-color: @light-background;
         }
         .select-selected:after {
             position: absolute;
@@ -156,8 +157,8 @@ button {
         .select-items div,.select-selected {
             color: #000000;
             padding: 8px 16px;
-            border: 1px solid transparent;
-            border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+            // border: 1px solid transparent;
+            // border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
             cursor: pointer;
         }
 
@@ -177,11 +178,83 @@ button {
         }
 
         .select-items div:hover, .same-as-selected {
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: #C4C4C4;
         }
     }
 
 }
+
+.filling-selector-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+    .radio-options-container {
+        display: flex;
+        padding-top: 15px;
+    }
+}
+/* Customize the label (the container) */
+.radio-container {
+    display: block;
+    position: relative;
+    padding: 35px 15px 0px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Hide the browser's default radio button */
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 18px);
+    height: 25px;
+    width: 25px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: 2px solid  @darkest-accent-color;
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the indicator (dot/circle) */
+  .checkmark:after {
+    top: 4px;
+    left: 3.75px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: @darkest-accent-color;
+  }
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+    background-color: @light-background;
+}
+
+
 #product-body-container {
     height: 90vh;
     display: flex;
