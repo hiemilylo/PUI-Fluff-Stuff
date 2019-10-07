@@ -8,7 +8,8 @@ for (const product of products) {
         }
         product.classList.toggle('selected')
         prod_image.src = product.querySelector('img').src
+        console.log(product.querySelector('h2'))
         prod_header.innerHTML =
-            `<h2>${product.querySelector('h2').innerHTML}</h2><h2>$15<h2>`
+            `<h3>${product.querySelector('h2').innerHTML}</h3><h3>$15</h3>`
     }
 }

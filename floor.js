@@ -10,7 +10,7 @@ for (const image of imgs) {
     }
 }
 
-function openTab(evt, tabName) {
+const openTab = (evt, tabName) => {
     let i, tabcontent, tablinks;
 
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -24,8 +24,11 @@ function openTab(evt, tabName) {
     }
 
     document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
+    if (evt) { evt.currentTarget.className += " active"; } else {
+        document.getElementById("default-tab").className += " active";
+    }
+}
+openTab(null, 'Product Information')
 
 let x, i, j, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
@@ -44,15 +47,15 @@ for (i = 0; i < x.length; i++) {
     /* For each option in the original select element,
     create a new DIV that will act as an option item: */
     c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.innerHTML = selElmnt.options[j].innerHTML + "<img src=\"images/colors-" + j + ".JPG\"/>";
     c.addEventListener("click", function(e) {
         /* When an item is clicked, update the original select box,
         and the selected item: */
-        var y, i, k, s, h;
+        let y, i, k, s, h;
         s = this.parentNode.parentNode.getElementsByTagName("select")[0];
         h = this.parentNode.previousSibling;
         for (i = 0; i < s.length; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
+          if (this.innerHTML.indexOf(s.options[i].innerHTML) > -1) {
             s.selectedIndex = i;
             h.innerHTML = this.innerHTML;
             y = this.parentNode.getElementsByClassName("same-as-selected");
@@ -78,10 +81,10 @@ for (i = 0; i < x.length; i++) {
   });
 }
 
-function closeAllSelect(elmnt) {
+const closeAllSelect = (elmnt) => {
   /* A function that will close all select boxes in the document,
   except the current select box: */
-  var x, y, i, arrNo = [];
+  let x, y, i, arrNo = [];
   x = document.getElementsByClassName("select-items");
   y = document.getElementsByClassName("select-selected");
   for (i = 0; i < y.length; i++) {
@@ -101,3 +104,24 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
+
+// Get the modal
+let modal = document.getElementById("checkout-popup");
+
+// When the user clicks on the button, open the modal
+const buyThis = () => {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+const closePopup = () => {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

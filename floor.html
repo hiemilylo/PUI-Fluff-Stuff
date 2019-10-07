@@ -13,21 +13,31 @@
 
 <body>
   <ul id="navigation-bar">
-      <li class="title" href="">Fluff Stuff</li>
+      <li><a class="title" href="index.html">Fluff Stuff</a></li>
   </ul>
   <div id ="product-descp-container">
     <div id="product-preview-container">
       <div id="product-preview-image-container">
-          <img id="product-preview-large" src="images/floor-pillow.JPG"/>
+          <img id="product-preview-large" src="images/floor-1.JPG"/>
       </div>
       <div id="product-preview-list">
-        <img class="chosen-preview" src="images/floor-pillow.JPG"/>
-        <img src="images/couch-pillow.JPG"/>
-        <img src="images/bed-pillow.JPG"/>
+        <img class="chosen-preview" src="images/floor-1.JPG"/>
+        <img src="images/floor-2.JPG"/>
+        <img src="images/floor-3.JPG"/>
       </div>
     </div>
     <div id="prod-description-container">
       <span class="prod-header"><h3>Floor Pouf Pillow</h3><h3>$15</h3></span>
+      <div class="rating-container">
+          <span class="star-container">
+            <img src="images/star-icon.png"/>
+            <img src="images/star-icon.png"/>
+            <img src="images/star-icon.png"/>
+            <img src="images/star-icon.png"/>
+            <img src="images/star-icon.png"/>
+          </span>
+          <p>(27)</p>
+        </div>
       <div class="description">
           The Purely Soft Solid Throw Pillows complements any room in your home
           by adding the perfect pop of color. These soft brushed microfiber pillows
@@ -38,9 +48,11 @@
           <h3>Yarn Color</h3>
           <div class="yarn-select">
               <select>
-                <option value="0">Default</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
+                <option value="0">See Yarn Colors...</option>
+                <option value="1">After School Special <img src="images/colors-1.JPG"/></option>
+                <option value="2">Morning Haze</option>
+                <option value="3">Cozy Denim</option>
+                <option value="4">Rainy Day</option>
               </select>
           </div>
         </span>
@@ -63,29 +75,129 @@
             </label>
           </div>
       </span>
+      <button class="checkout-button" onclick="buyThis(event)">Add to Bag</button>
     </div>
   </div>
   <div id="more-info-container">
     <!-- Tab links -->
     <div class="tab">
-        <button class="tablinks active" onclick="openTab(event, 'Product Information')">Product Information</button>
+        <button id="default-tab" class="tablinks" onclick="openTab(event, 'Product Information')">Product Information</button>
         <button class="tablinks" onclick="openTab(event, 'Reviews')">Reviews</button>
-        <button class="tablinks" onclick="openTab(event, 'Q&A')">Q&A</button>
       </div>
 
       <!-- Tab content -->
       <div id="Product Information" class="tabcontent">
-        <h3>Product Information</h3>
+        <div class="details-cols">
+            <div>
+              <h3>Details</h4>
+              <ul class="details-list">
+                  <li>Square shape</li>
+                  <li>100% Polyester</li>
+                  <li>Spot clean only</li>
+                  <li>Measures 18" L x 18" W x 4.5" D</li>
+                  <li>Hand-knitted</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Fillings</h4>
+              <table class="fillings-table">
+                <tr>
+                  <th>Duck Brown</th>
+                  <td>Our most popular filling, synthetic duck feathers</td>
+                </tr>
+                <tr>
+                  <th>Poly-blend</th>
+                  <td>Hypoallergenic, good for sensitive skin</td>
+                </tr>
+                <tr>
+                  <th>Memory Foam</th>
+                  <td>Ultra soft, offers extra support</td>
+                </tr>
+              </table>
+            </div>
+        </div>
       </div>
 
       <div id="Reviews" class="tabcontent">
-        <h3>Reviews</h3>
-      </div>
-
-      <div id="Q&A" class="tabcontent">
-        <h3>Q&A</h3>
+        <div class="review-container">
+        <img class="person_icon" src="images/person.png"/>
+        <div class="review-text-container">
+        <div class="review-name-container">
+          <p>Emily L.</p>
+          <span class="star-container">
+              <img src="images/star-icon.png"/>
+              <img src="images/star-icon.png"/>
+              <img src="images/star-icon.png"/>
+              <img src="images/star-icon.png"/>
+              <img src="images/star-icon.png"/>
+          </span>
+        </div>
+        <p class="bought-details">After School Special, Duck Brown</p>
+        <p class="review-text">"Super comfortable! I really enjoy the pattern, and it's very good quality."</p>
+        </div>
+        </div>
+        <div class="review-container">
+        <img class="person_icon" src="images/person.png"/>
+        <div class="review-text-container">
+        <div class="review-name-container">
+            <p>Micahel W.</p>
+            <span class="star-container">
+                <img src="images/star-icon.png"/>
+                <img src="images/star-icon.png"/>
+                <img src="images/star-icon.png"/>
+                <img src="images/star-icon.png"/>
+                <img src="images/star-icon.png"/>
+            </span>
+        </div>
+        <p class="bought-details">Rainy Day, Polyblend</p>
+        <p class="review-text">"I love that there's this poly-blend option. It's great for all uses."</p>
+        </div>
+        </div>
+        <div class="review-container">
+        <img class="person_icon" src="images/person.png"/>
+        <div class="review-text-container">
+          <div class="review-name-container">
+              <p>David S.</p>
+              <span class="star-container">
+                  <img src="images/star-icon.png"/>
+                  <img src="images/star-icon.png"/>
+                  <img src="images/star-icon.png"/>
+                  <img src="images/star-icon.png"/>
+                  <img src="images/star-icon.png"/>
+              </span>
+          </div>
+          <p class="bought-details">Cozy Denim, Duck Brown</p>
+          <p class="review-text">"Basic and does the job well."</p>
+        </div>
+        </div>
+        <div class="review-container">
+          <img class="person_icon" src="images/person.png"/>
+          <div class="review-text-container">
+            <div class="review-name-container">
+                <p>Amanda L.</p>
+                <span class="star-container">
+                    <img src="images/star-icon.png"/>
+                    <img src="images/star-icon.png"/>
+                    <img src="images/star-icon.png"/>
+                    <img src="images/star-icon.png"/>
+                    <img src="images/star-icon.png"/>
+                </span>
+            </div>
+            <p class="bought-details">After School Special, Memory Foam</p>
+            <p class="review-text">"Enjoy it a lot. I love how elegant it is."</p>
+          </div>
+        </div>
       </div>
   </div>
+  <div id="checkout-popup" class="modal">
+      <div class="popup-content">
+        <h3>Floor Pouf Pillow</h3>
+        <h2>Added to Cart!</h2>
+        <img src="images/person.png"/>
+        <button onclick="closePopup()">Continue Shopping</button>
+        <button onclick="closePopup()">Check out</button>
+      </div>
+    </div>
   <script src="floor.js"></script>
 </body>
 
