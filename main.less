@@ -145,9 +145,17 @@ button:hover {
         img {
             display: block;
             width: 20vh;
+            margin: 0 auto;
         }
-        button {
-            font-family: @font-fam;
+        .buttons {
+            width: 25vw;
+            display: flex;
+            justify-content: space-between;
+            margin: 35px auto;
+            button {
+                margin: 0px 15px;
+                font-family: @font-fam;
+            }
         }
     }
 }
@@ -156,6 +164,10 @@ button:hover {
     display: flex;
     width: @chosen-prod-width;
     justify-content: space-between;
+}
+
+#prod-preview-desc {
+    margin: 15px 0;
 }
 
 .star-container {
@@ -205,6 +217,24 @@ button:hover {
     }
     #prod-description-container {
         width: 30vw;
+        .prod-desc-header {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+.quantity-selector-container {
+    display: flex;
+    margin: 15px 0;
+    h3 {
+        margin: auto 0;
+    }
+    input {
+        margin: 0 20%;
+        font-family: @font-fam;
+        font-size: 14px;
+        padding: 5px 15px;
     }
 }
 
@@ -416,6 +446,9 @@ button:hover {
                 a {
                     text-decoration: none;
                     color: #000000;
+                }
+                p {
+                    margin: 15px 0;
                 }
             }
             .product-listing:hover {

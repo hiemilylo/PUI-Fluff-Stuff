@@ -27,7 +27,7 @@
       </div>
     </div>
     <div id="prod-description-container">
-      <span class="prod-header"><h3>Floor Pouf Pillow</h3><h3>$15</h3></span>
+      <span class="prod-desc-header"><h3>Floor Pouf Pillow</h3><h3>$15</h3></span>
       <div class="rating-container">
           <span class="star-container">
             <img src="images/star-icon.png"/>
@@ -74,6 +74,10 @@
               <span class="checkmark"></span>
             </label>
           </div>
+      </span>
+      <span class="quantity-selector-container">
+          <h3>Qty</h3>
+          <input type="number" value="1" name="quantity" min="1" max="5">
       </span>
       <button class="checkout-button" onclick="buyThis(event)">Add to Bag</button>
     </div>
@@ -193,9 +197,11 @@
       <div class="popup-content">
         <h3>Floor Pouf Pillow</h3>
         <h2>Added to Cart!</h2>
-        <img src="images/person.png"/>
-        <button onclick="closePopup()">Continue Shopping</button>
-        <button onclick="closePopup()">Check out</button>
+        <img src="images/cart.png"/>
+        <span class="buttons">
+          <button onclick="closePopup()">Continue Shopping</button>
+          <button onclick="closePopup()">Check out</button>
+        </span>
       </div>
     </div>
   <script src="floor.js"></script>
